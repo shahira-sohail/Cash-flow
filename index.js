@@ -84,6 +84,8 @@ expenseForm.addEventListener("submit", function(event){
     expenseAmountInput.value = "";
 });
 
+const currentDate = document.getElementById("current-date");
+
 function displayCurrentDate() {
     const today = new Date();
 
@@ -93,6 +95,8 @@ function displayCurrentDate() {
         year: "numeric"
     });
 }
+
+displayCurrentDate();
 
 function saveToLocalStorage() {
     localStorage.setItem(
