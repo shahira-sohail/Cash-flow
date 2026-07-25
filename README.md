@@ -147,8 +147,3 @@ This project demonstrates understanding of:
   ##Author
   Shahira sohail
   
-  
-
----
-
-or educational purposes as part of the Sprint 02 assignment.
