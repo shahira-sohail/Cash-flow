@@ -26,6 +26,15 @@ let totalExpenses = 0;
 let remainingBalance = 0;
 let expenses = [];
 
+function updateBalanceColor() {
+    if (remainingBalance < 0) {
+        balanceDisplay.classList.remove("positive-balance");
+        balanceDisplay.classList.add("negative-balance");
+    } else {
+        balanceDisplay.classList.remove("negative-balance");
+        balanceDisplay.classList.add("positive-balance");
+    }
+}
 //stopping refresh of the page when submitting a form
 salaryForm.addEventListener("submit",function(event){
     event.preventDefault();
@@ -37,12 +46,14 @@ salaryForm.addEventListener("submit",function(event){
          return;
     }
     totalSalary = salary;
-    remainingBalance = salary;
+    remainingBalance = totalSalary - totalExpenses;
+
 
     //updating the dashboard
     salaryDisplay.textContent = `₹${totalSalary}`;
     balanceDisplay.textContent = `₹${remainingBalance}`;
-
+    
+    updateBalanceColor();
     saveToLocalStorage();
     renderChart();
 });
@@ -76,6 +87,7 @@ expenseForm.addEventListener("submit", function(event){
 
     expenseDisplay.textContent = `₹${totalExpenses}`;
     balanceDisplay.textContent = `₹${remainingBalance}`;
+    updateBalanceColor();
 
     saveToLocalStorage();
     renderExpenses();
@@ -123,6 +135,7 @@ function loadFromLocalStorage(){
     expenseDisplay.textContent = `₹${totalExpenses}`;
     balanceDisplay.textContent = `₹${remainingBalance}`;
     expenseList.innerHTML = "";
+    updateBalanceColor();
     renderExpenses();
     renderChart();
 }
@@ -189,6 +202,7 @@ expenseList.addEventListener("click", function(event){
         remainingBalance = totalSalary - totalExpenses;
         expenseDisplay.textContent = `₹${totalExpenses}`;
         balanceDisplay.textContent = `₹${remainingBalance}`;
+        updateBalanceColor();
         saveToLocalStorage();
         renderExpenses();
         renderChart();
