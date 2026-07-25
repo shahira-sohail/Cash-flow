@@ -141,6 +141,11 @@ This project demonstrates understanding of:
 - Chart.js Integration
 
   ##Screenshots
+  ![Screenshot of dashboard](dashboardss1.png)
+  ![Screenshot of dashboard](dashboardss2.png)
+
+  ##Author
+  Shahira sohail
   
   
 
