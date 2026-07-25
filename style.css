@@ -292,3 +292,12 @@ body{
     }
 
 }
+
+
+.positive-balance {
+    color: #22c55e !important;
+}
+
+.negative-balance {
+    color: #ef4444 !important;
+}
