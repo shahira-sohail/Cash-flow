@@ -84,6 +84,16 @@ expenseForm.addEventListener("submit", function(event){
     expenseAmountInput.value = "";
 });
 
+function displayCurrentDate() {
+    const today = new Date();
+
+    currentDate.textContent = today.toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric"
+    });
+}
+
 function saveToLocalStorage() {
     localStorage.setItem(
         "salary",
