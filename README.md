@@ -1,4 +1,4 @@
-# Cash-flow
+# Cash-flow(Sprint02)
 
 A Salary & Expense Tracker built using **HTML, CSS, and Vanilla JavaScript**. This application allows users to manage their salary, record expenses, calculate their remaining balance, visualize their finances with a pie chart, and persist data using LocalStorage.
 
